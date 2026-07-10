@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Editors / tooling
+.agents/
+.claude/
+.trae/
+.idea/
+.vscode/
+*.swp
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local snapshot zips (kept locally, not versioned)
+*.zip
+
+# Local exploration outputs (large XML reports, etc.)
+explorations/
+
+# Logs
+*.log
+logs/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local

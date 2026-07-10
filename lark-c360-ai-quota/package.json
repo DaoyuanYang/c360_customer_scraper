@@ -1,0 +1,14 @@
+{
+  "name": "lark-c360-ai-quota",
+  "version": "2.1.0",
+  "description": "从飞书 C360 CRM 自动化抓取「鑫企点老客户」视图客户与 AI 通用额度每日明细。客户表以 accountId 为唯一键做 upsert,自带「实际可进入详情」checkbox 与「客户表一致性」formula 防重复。",
+  "metadata": {
+    "requires": {
+      "bins": ["lark-cli", "node>=20", "jq"],
+      "skills": ["lark-base"]
+    }
+  },
+  "dependencies": {
+    "ws": "^8.21.0"
+  }
+}

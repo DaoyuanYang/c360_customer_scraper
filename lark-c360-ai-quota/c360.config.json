@@ -1,0 +1,64 @@
+{
+  "viewId": "user-67",
+  "cdpPort": 18800,
+  "userDataDir": "/tmp/claude-c360-debug-edge",
+  "larkCliPath": "/Users/xqdmacminim4/.npm-global/bin/lark-cli",
+  "knownCustomers": [
+    "TCL光伏智维科技（深圳）有限公司",
+    "深圳市嗨西西科技有限公司",
+    "深圳易威行贸易有限公司",
+    "桂林市啄木鸟医疗器械有限公司",
+    "广州未来一手网络科技有限公司",
+    "深圳超维动力智能科技有限公司",
+    "深圳市爱协生科技股份有限公司",
+    "深圳矽递科技股份有限公司",
+    "深圳市杉岩数据技术有限公司",
+    "深圳市猿人创新科技有限公司",
+    "深圳数阔信息技术有限公司",
+    "众惠财产相互保险社",
+    "厦门吉比特网络技术股份有限公司",
+    "深圳市富皇美运国际商贸物流有限公司",
+    "深圳市启步电子商务有限公司"
+  ],
+  "testCustomers": [
+    "深圳矽递科技股份有限公司",
+    "深圳市爱协生科技股份有限公司",
+    "深圳市杉岩数据技术有限公司",
+    "厦门吉比特网络技术股份有限公司",
+    "深圳超维动力智能科技有限公司"
+  ],
+  "miaodaDrivenSync": {
+    "enabled": true,
+    "assignmentsTable": "customer_assignments",
+    "customerNameColumn": "customer_name",
+    "env": "dev",
+    "searchViewId": "system-5",
+    "excludeIfC360ViewHas": true,
+    "searchPageSize": 5,
+    "excludeNames": [
+      "深圳易威行科技创新有限公司"
+    ]
+  },
+  "miaodaDb": {
+    "enabled": true,
+    "appId": "app_4kesen9z6tbnr",
+    "env": "online",
+    "schema": "workspace_aadkgklgugsaw",
+    "table": "customer_ai_quota",
+    "columns": {
+      "ai_credits_asset_usage_knowledge":   "知识问答",
+      "ai_credits_asset_usage_vc_ai":       "智能纪要",
+      "ai_credits_asset_usage_aily_buddy":  "飞书 aily 智能伙伴",
+      "ai_credits_asset_usage_miaoda":      "妙搭",
+      "ai_credits_asset_usage_miaoda_claw": "飞书 OpenClaw",
+      "ai_credits_asset_usage_aily_app":    "飞书 aily 应用",
+      "ai_credits_asset_usage_aily_agent":  "飞书 aily 智能体",
+      "ai_credits_asset_usage_apaas":       "飞书 aPaaS",
+      "ai_credits_asset_usage_doc_ai":      "文档 AI 速览",
+      "ai_credits_asset_usage_base":        "多维表格 AI",
+      "ai_credits_asset_usage_meego":       "飞书项目 AI",
+      "ai_credits_asset_usage_nexus_bot":   "飞书 aily 专用额度",
+      "ai_credits_aily_pro":                "飞书 aily 专业版"
+    }
+  }
+}
