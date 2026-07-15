@@ -102,11 +102,14 @@ C360 客户 AI 通用额度采集。数据**唯一落地点是妙搭 DB**（`cus
 open -na "Microsoft Edge" --args \
   --remote-debugging-port=18800 \
   --remote-allow-origins=* \
-  --user-data-dir=/tmp/claude-c360-debug-edge \
+  --user-data-dir="$HOME/Library/Application Support/Microsoft Edge" \
   "https://c360.larkoffice.com/pc/account/list?viewId=user-67"
 ```
 
-如果跳登录页，用户需要在这个 Edge 窗口完成 C360 登录。
+
+
+> **默认使用主 Edge profile (yangdaoyuan@xinqiaodigital.com)**: 数据目录是用户主 Edge profile `~/Library/Application Support/Microsoft Edge/`,**不要**用 `/tmp` 临时目录。Edge 启动时若已有此 profile 在跑,需要先 quit 再用 `--remote-debugging-port=18800` 重启,C360 cookies 从磁盘直接复用,无需重新扫码。`c360.config.json#userDataDir`、`scripts/c360_collect.mjs` 的 fallback 默认值、SKILL.md 与 README.md 的启动命令都同步指向主 profile 路径。
+
 
 ### 2. 进入 skill 目录
 
@@ -499,7 +502,7 @@ C360 SPA 用飞书自研 `ud-c360` UI 组件库，next 按钮监听 `pointerdown
 
 如果你看到该报错：
 1. 确认你跑的是最新代码（`c360_collect.mjs` 里 `NEXT_CLICK_CODE` 应包含 `dispatchEvent` 和 `PointerEvent` 字样）。
-2. Edge 调试模式可能被覆盖——重启 Edge：`open -na "Microsoft Edge" --args --remote-debugging-port=18800 --remote-allow-origins=* --user-data-dir=/tmp/claude-c360-debug-edge "https://c360.larkoffice.com/pc/account/list?viewId=user-67"`。
+2. Edge 调试模式可能被覆盖——重启 Edge：`open -na "Microsoft Edge" --args --remote-debugging-port=18800 --remote-allow-origins=* --user-data-dir="$HOME/Library/Application Support/Microsoft Edge" "https://c360.larkoffice.com/pc/account/list?viewId=user-67"`。
 
 ### 为什么抓到 279 而不是视图显示的 293？
 

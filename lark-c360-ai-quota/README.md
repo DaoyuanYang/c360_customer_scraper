@@ -46,7 +46,7 @@ scripts/c360_collect.mjs
 open -na "Microsoft Edge" --args \
   --remote-debugging-port=18800 \
   --remote-allow-origins=* \
-  --user-data-dir=/tmp/claude-c360-debug-edge \
+  --user-data-dir="$HOME/Library/Application Support/Microsoft Edge" \
   "https://c360.larkoffice.com/pc/account/list?viewId=user-67"
 
 # 2. Login to C360 in the Edge window if needed

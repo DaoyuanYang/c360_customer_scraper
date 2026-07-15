@@ -244,7 +244,7 @@ async function phase0_ensureEdge() {
 
   // Launch a fresh debug Edge
   const port = env.CDP_PORT ?? '18800';
-  const userDataDir = cfg.userDataDir || `/tmp/claude-c360-debug-edge`;
+  const userDataDir = cfg.userDataDir || `/Users/xqdmacminim4/Library/Application Support/Microsoft Edge`;
   const url = `https://c360.larkoffice.com/pc/account/list?viewId=${cfg.viewId || 'user-67'}`;
   log(`Launching Edge with --remote-debugging-port=${port} ...`);
   const r = spawnSync('open', [
