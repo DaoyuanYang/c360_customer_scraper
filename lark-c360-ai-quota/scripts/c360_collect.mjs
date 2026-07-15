@@ -56,7 +56,7 @@ const METRIC_KEYS = [
   { key: 'ai_credits_asset_usage_base',     syntheticZero: false },
   { key: 'ai_credits_asset_usage_meego',    syntheticZero: false },
   { key: 'ai_credits_asset_usage_nexus_bot',syntheticZero: false },
-  { key: 'ai_credits_aily_pro',             syntheticZero: true  },
+  { key: 'ai_credits_aily_pro',             syntheticZero: true  },  // C360 暂无此产品(对应 飞书 aily 专用额度),保持 0
 ];
 
 // Mirror every log() line to args.logFile when set (wired up right after

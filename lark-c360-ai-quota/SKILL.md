@@ -76,7 +76,7 @@ C360 客户 AI 通用额度采集。数据**唯一落地点是妙搭 DB**（`cus
 |---|---|
 | 知识问答 | `ai_credits_asset_usage_knowledge` |
 | 智能纪要 | `ai_credits_asset_usage_vc_ai` |
-| 飞书 aily 智能伙伴 | `ai_credits_asset_usage_aily_buddy` |
+| 飞书 aily 智能伙伴 | `ai_credits_asset_usage_nexus_bot` |
 | 妙搭 | `ai_credits_asset_usage_miaoda` |
 | 飞书 OpenClaw | `ai_credits_asset_usage_miaoda_claw` |
 | 飞书 aily 应用 | `ai_credits_asset_usage_aily_app` |
@@ -85,12 +85,14 @@ C360 客户 AI 通用额度采集。数据**唯一落地点是妙搭 DB**（`cus
 | 文档 AI 速览 | `ai_credits_asset_usage_doc_ai` |
 | 多维表格 AI | `ai_credits_asset_usage_base` |
 | 飞书项目 AI | `ai_credits_asset_usage_meego`（当前恒为 0） |
-| 飞书 aily 专用额度 | `ai_credits_asset_usage_nexus_bot` |
-| 飞书 aily 专业版 | `ai_credits_aily_pro`（当前恒为 0） |
+| 飞书 aily 专用额度 | `ai_credits_aily_pro`(当前恒为 0,C360 暂无此产品) |
+| 飞书 aily 专业版 | `ai_credits_asset_usage_aily_buddy` |
 
 > **已退役的飞书 Base（仅归档保留，脚本不再读写）**：Base `KsGkbl2xZap6HOseBHZck2oKnBg` 下的客户表 `tblwV5oiNBOlJWAX` 与 AI 通用额度明细 V2 `tblJ4543DWO44K07`。如需查历史数据可在飞书里直接打开，但采集链路已不依赖它们。
 
 ---
+
+> ⚠️ **2026-07-15 修正**: C360 后台的 metric key 字面意思跟产品名对调了 — `aily_buddy` 实际返回 飞书 aily专业版 的数据,`nexus_bot` 实际返回 飞书 aily 智能伙伴 的数据。`c360.config.json` 映射和本表都已 swap。
 
 ## 快速开始
 

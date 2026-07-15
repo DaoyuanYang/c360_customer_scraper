@@ -48,7 +48,7 @@
     "columns": {
       "ai_credits_asset_usage_knowledge":   "知识问答",
       "ai_credits_asset_usage_vc_ai":       "智能纪要",
-      "ai_credits_asset_usage_aily_buddy":  "飞书 aily 智能伙伴",
+      "ai_credits_asset_usage_aily_buddy":  "飞书 aily 专业版",
       "ai_credits_asset_usage_miaoda":      "妙搭",
       "ai_credits_asset_usage_miaoda_claw": "飞书 OpenClaw",
       "ai_credits_asset_usage_aily_app":    "飞书 aily 应用",
@@ -57,8 +57,8 @@
       "ai_credits_asset_usage_doc_ai":      "文档 AI 速览",
       "ai_credits_asset_usage_base":        "多维表格 AI",
       "ai_credits_asset_usage_meego":       "飞书项目 AI",
-      "ai_credits_asset_usage_nexus_bot":   "飞书 aily 专用额度",
-      "ai_credits_aily_pro":                "飞书 aily 专业版"
+      "ai_credits_asset_usage_nexus_bot":   "飞书 aily 智能伙伴",
+      "ai_credits_aily_pro":                "飞书 aily 专用额度"
     }
   }
 }
