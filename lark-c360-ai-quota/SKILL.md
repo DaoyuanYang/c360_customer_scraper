@@ -102,13 +102,15 @@ C360 客户 AI 通用额度采集。数据**唯一落地点是妙搭 DB**（`cus
 open -na "Microsoft Edge" --args \
   --remote-debugging-port=18800 \
   --remote-allow-origins=* \
-  --user-data-dir="$HOME/Library/Application Support/Microsoft Edge" \
+  --user-data-dir="$HOME/.edge-cdp-profile" \
   "https://c360.larkoffice.com/pc/account/list?viewId=user-67"
 ```
 
 
 
-> **默认使用主 Edge profile (yangdaoyuan@xinqiaodigital.com)**: 数据目录是用户主 Edge profile `~/Library/Application Support/Microsoft Edge/`,**不要**用 `/tmp` 临时目录。Edge 启动时若已有此 profile 在跑,需要先 quit 再用 `--remote-debugging-port=18800` 重启,C360 cookies 从磁盘直接复用,无需重新扫码。`c360.config.json#userDataDir`、`scripts/c360_collect.mjs` 的 fallback 默认值、SKILL.md 与 README.md 的启动命令都同步指向主 profile 路径。
+> **默认使用专用 cdp profile**: 数据目录是 `~/.edge-cdp-profile`,**与日常 Edge 隔离** —— 你日常 Edge 不用 quit,直接执行上面命令即可。第一次启动会引导你登录 C360,登录态(macOS Keychain 复用)持久化到该 profile,后续脚本自带 `pkill ... .edge-cdp-profile` 范围限定不会影响你日常 Edge。
+>
+> 若首次进入发现未登录,在打开的 Edge 窗口里走一次 C360 OAuth,刷新页面即可。`c360.config.json#userDataDir`、`scripts/c360_collect.mjs` 的 fallback 默认值、SKILL.md 与 README.md 的启动命令都同步指向 `~/.edge-cdp-profile` 路径。
 
 
 ### 2. 进入 skill 目录
@@ -502,7 +504,7 @@ C360 SPA 用飞书自研 `ud-c360` UI 组件库，next 按钮监听 `pointerdown
 
 如果你看到该报错：
 1. 确认你跑的是最新代码（`c360_collect.mjs` 里 `NEXT_CLICK_CODE` 应包含 `dispatchEvent` 和 `PointerEvent` 字样）。
-2. Edge 调试模式可能被覆盖——重启 Edge：`open -na "Microsoft Edge" --args --remote-debugging-port=18800 --remote-allow-origins=* --user-data-dir="$HOME/Library/Application Support/Microsoft Edge" "https://c360.larkoffice.com/pc/account/list?viewId=user-67"`。
+2. Edge 调试模式可能被覆盖——重启 Edge：`open -na "Microsoft Edge" --args --remote-debugging-port=18800 --remote-allow-origins=* --user-data-dir="$HOME/.edge-cdp-profile" "https://c360.larkoffice.com/pc/account/list?viewId=user-67"`。
 
 ### 为什么抓到 279 而不是视图显示的 293？
 

@@ -1,7 +1,7 @@
 {
   "viewId": "user-67",
   "cdpPort": 18800,
-  "userDataDir": "/Users/xqdmacminim4/Library/Application Support/Microsoft Edge",
+  "userDataDir": "/Users/xqdmacminim4/.edge-cdp-profile",
   "larkCliPath": "/Users/xqdmacminim4/.npm-global/bin/lark-cli",
   "knownCustomers": [
     "TCL光伏智维科技（深圳）有限公司",

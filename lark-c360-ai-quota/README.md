@@ -42,14 +42,14 @@ scripts/c360_collect.mjs
 ## Quick start
 
 ```bash
-# 1. Start Edge with CDP
+# 1. Start Edge with CDP (uses isolated profile ~/.edge-cdp-profile)
 open -na "Microsoft Edge" --args \
   --remote-debugging-port=18800 \
   --remote-allow-origins=* \
-  --user-data-dir="$HOME/Library/Application Support/Microsoft Edge" \
+  --user-data-dir="$HOME/.edge-cdp-profile" \
   "https://c360.larkoffice.com/pc/account/list?viewId=user-67"
 
-# 2. Login to C360 in the Edge window if needed
+# 2. Login to C360 in the Edge window if needed (first run only; later sessions reuse)
 
 # 3. Run from skill dir
 cd /Users/xqdmacminim4/Desktop/feishu_claude/.agents/skills/lark-c360-ai-quota

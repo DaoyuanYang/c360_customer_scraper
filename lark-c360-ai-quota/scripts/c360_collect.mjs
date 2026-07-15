@@ -238,13 +238,15 @@ async function phase0_ensureEdge() {
     log(`Edge not reachable on port ${env.CDP_PORT ?? 18800}: ${err.message}`);
   }
 
-  // Kill any zombie Edge processes holding the port
-  spawnSync('pkill', ['-f', 'Microsoft Edge.*remote-debugging-port'], { stdio: 'ignore' });
+  // Kill only zombie Edge processes bound to the dedicated cdp profile.
+  // We scope the kill to the cdp profile path so the user's daily Edge
+  // (which may also be running with --remote-debugging-port) is untouched.
+  spawnSync('pkill', ['-f', 'Microsoft Edge.*\\.edge-cdp-profile'], { stdio: 'ignore' });
   await new Promise((r) => setTimeout(r, 1000));
 
-  // Launch a fresh debug Edge
+  // Launch a fresh debug Edge using the isolated cdp profile.
   const port = env.CDP_PORT ?? '18800';
-  const userDataDir = cfg.userDataDir || `/Users/xqdmacminim4/Library/Application Support/Microsoft Edge`;
+  const userDataDir = cfg.userDataDir || `/Users/xqdmacminim4/.edge-cdp-profile`;
   const url = `https://c360.larkoffice.com/pc/account/list?viewId=${cfg.viewId || 'user-67'}`;
   log(`Launching Edge with --remote-debugging-port=${port} ...`);
   const r = spawnSync('open', [
